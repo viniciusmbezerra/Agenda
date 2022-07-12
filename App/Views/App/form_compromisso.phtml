@@ -1,0 +1,24 @@
+<form action="/<?= $this->view->acao ?>_compromisso" method="POST" class="form_compromisso">
+    <h1 class="p-3 h3"><?= ucfirst($this->view->acao) ?> Compromisso</h1>
+
+    <div class="input-group flex-nowrap my-2">
+        <input type="hidden" name="idcompromisso" value="<?= $this->view->infoCompromisso['idcompromisso'] ?>">
+    </div>
+
+    <div class="input-group flex-nowrap my-2">
+        <span class="input-group-text">Descrição</span>
+        <input type="text" name="descricao" class="form-control" placeholder="Ex: 89981345673" value="<?= $this->view->infoCompromisso['descricao'] ?>"><br>
+    </div>
+        
+    <div class="input-group flex-nowrap my-2">
+        <span class="input-group-text">Data_compromisso</span>
+        <input type="date" name="data_compromisso" class="form-control" placeholder="Ex: Bob Esponja" value="<?= $this->view->infoCompromisso['data_compromisso'] ?>"><br>
+    </div>
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn btn-success mb-5"><?= ucfirst($this->view->acao) ?></button>
+    </div>
+    <div class="d-grid gap-2">
+        <a href='/compromisso' class="btn btn-sm btn-outline-warning">Voltar</a>
+    </div>
+</form>

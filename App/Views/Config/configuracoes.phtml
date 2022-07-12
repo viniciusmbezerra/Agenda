@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="configuracoes">
+        <h3>Personalize a sua agenda:</h3>
+        <form action="/atualizar_tema" method="get">
+
+            <label for="cor_fundo" class="form-label">Cor de fundo</label>
+            <input type="color" name="cor_fundo" class="form-control form-control-color" id="cor_fundo" value="<?=$this->view->tema['cor_fundo']?>" title="Escolha a cor">
+            
+            <label for="cor_fundo" class="form-label">Cor do texto</label>
+            <input type="color" name="cor_texto" class="form-control form-control-color" id="cor_fundo" value="<?=$this->view->tema['cor_texto']?>" title="Escolha a cor">
+
+            <label for="cor_fundo" class="form-label">Cor barra de navegação</label>
+            <input type="color" name="cor_barra_nav" class="form-control form-control-color" id="cor_fundo" value="<?=$this->view->tema['cor_barra_nav']?>" title="Escolha a cor">
+
+            <button type="submit" class="btn btn-success my-3">Atualizar</button>
+        </form>
+    </div>
+</div>

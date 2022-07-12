@@ -1,0 +1,64 @@
+<script>
+    function alterar(destino) {
+        let el = document.getElementById('cube');
+        // alterando uma propriedade
+        if(destino=='cadastro'){
+            el.style.animation = ".8s 1 linear cadastro";
+            el.style.transform = "rotateY(90deg)";
+        }
+        if(destino=='login') {
+            el.style.animation = ".8s 1 linear login";
+            el.style.transform = "rotateY(0deg)";
+        } 
+    }
+</script>
+
+<div class="sol"></div>
+<div class="cube" id="cube">
+<div class="face face--front" id="face--front">
+    <form action="/autenticar" method="POST" class="login" id="login">
+        <hgroup>
+            <h2>Bem-vindo a agenda</h2>
+            <h4>Faça o login</h4>
+        </hgroup>
+    
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="input" placeholder="Seu email" required autofocus><br>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" class="input" placeholder="Senha" required><br>
+        <button type="submit" class="btn" id="entrar">Entrar</button><br>
+        <a class="btn" id="criar-conta" onclick="alterar('cadastro')">Criar conta</a><br>
+        <p class="mt-3 mb-3">&copy; 2022-2023</p>
+    </form>
+</div>
+<div class="face face--right"></div>
+<div class="face face--back"></div>
+<div class="face face--left">
+<form action="/cadastrar" method="POST" class="login">
+        <h2 class="h2 p-3">Cadastre-se</h2>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Nome</span>
+            </div>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="nome curto">
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Email</span>
+            </div>
+            <input type="text" class="form-control" id="email" name="email" placeholder="seu melhor">
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Senha</span>
+            </div>
+            <input type="password" class="form-control" id="senha" name="senha" placeholder="**********">
+        </div>
+        <button type="submit" class="btn">Cadastrar</button><br>
+        <a class="btn" onclick="alterar('login')">Voltar</a>
+        <p class="mt-5 mb-3">&copy; 2022-2023</p>
+    </form>
+</div>
+<div class="face face--top"></div>
+<div class="face face--bottom"></div>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Agenda</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/user.css">
+	<?php
+		$links = $this->css();
+		foreach($links as $link){
+			echo $link;
+		}
+	?>
+</head>
+
+<body>
+	<nav class="pt-3">
+		<ul class="nav nav-tabs pl-5">
+			<?php $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>
+			<li class="nav-item">
+				<a class="nav-link <?= $url=='/compromisso'?'text-dark active':'text-white' ?>" aria-current="page" href="/compromisso">Compromissos</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-white <?= $url=='/contato' || $url=='/form_contato'?'text-dark active':'text-white' ?>" href="/contato">Contatos</a>
+			</li>
+		</ul>
+		<div class="text-white" style="position:absolute;right:10%;top:8px;">
+			<div class="h6 py-2 pl-2 d-inline" style="border-radius:10px;">
+				Usuário: <?= $_SESSION['nome'] ?>
+				<a href="/sair" class="ml-2 p-2 bg-danger text-white">Sair</a>
+				<a href="/configuracoes" class="ml-2 p-2 bg-info text-white">Configurações</a>
+			</div>
+		</div>
+	</nav>
+	
+	<?= $this->content() ?>
+
+</body>
+</html>

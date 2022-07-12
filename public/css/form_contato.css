@@ -1,0 +1,9 @@
+.form_contato {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(59, 59, 59);
+}

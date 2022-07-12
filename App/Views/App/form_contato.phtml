@@ -1,0 +1,29 @@
+<form action="/<?= $this->view->acao ?>_contato" method="POST" class="form_contato">
+    <h1 class="p-3 h3"><?= ucfirst($this->view->acao) ?> contato</h1>
+
+    <div class="input-group flex-nowrap my-2">
+        <input type="hidden" name="idcontato" value="<?= $this->view->infoContato['idcontato'] ?>">
+    </div>
+        
+    <div class="input-group flex-nowrap my-2">
+        <span class="input-group-text">Nome</span>
+        <input type="text" name="nome" class="form-control" placeholder="Ex: Bob Esponja" value="<?= $this->view->infoContato['nome'] ?>"><br>
+    </div>
+
+    <div class="input-group flex-nowrap my-2">
+        <span class="input-group-text">Telefone</span>
+        <input type="text" name="telefone" class="form-control" placeholder="Ex: 89981345673" value="<?= $this->view->infoContato['telefone'] ?>"><br>
+    </div>
+
+    <div class="input-group flex-nowrap my-2">
+        <span class="input-group-text">Email</span>
+        <input type="text" name="email" class="form-control" placeholder="Ex: exemplo@exemplo.com" value="<?= $this->view->infoContato['email'] ?>">
+    </div>
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn btn-success mb-5"><?= ucfirst($this->view->acao) ?></button>
+    </div>
+    <div class="d-grid gap-2">
+        <a href='/contato' class="btn btn-sm btn-outline-warning">Voltar</a>
+    </div>
+</form>

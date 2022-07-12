@@ -1,0 +1,28 @@
+<div class="contatos row">
+  <a href="/form_contato?acao=criar" class="btn btn-success my-3">Adicionar Contato</a>
+  <table class="table text-white">
+    <thead class="table-dark">
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <?php
+        $contatos = $this->view->contatos;
+        foreach($contatos as $contato){
+          echo "
+          <tr>
+            <td>{$contato['nome']}</td>
+            <td>{$contato['telefone']}</td>
+            <td>{$contato['email']}</td>
+            <td><a href='/form_contato?idcontato={$contato['idcontato']}&acao=editar' class='btn btn-sm btn-info'>Editar</a></td>
+            <td><a href='/deletar_contato?idcontato={$contato['idcontato']}' class='btn btn-sm btn-danger'>Deletar</a></td>
+          </tr>
+          ";
+        }
+      ?>
+    </tbody>
+  </table>
+</div>

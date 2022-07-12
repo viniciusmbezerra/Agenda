@@ -1,0 +1,26 @@
+<div class="compromissos row">
+  <a href="/form_compromisso?acao=criar" class="btn btn-success my-3">Adicionar Compromisso</a>
+  <table class="table text-white">
+    <thead class="table-dark">
+      <th>Descrição</th>
+      <th>Data Compromisso</th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <?php
+        $compromissos = $this->view->compromissos;
+        foreach($compromissos as $compromisso){
+          echo "
+          <tr>
+            <td>{$compromisso['descricao']}</td>
+            <td>{$compromisso['data_compromisso']}</td>
+            <td><a href='/form_compromisso?idcompromisso={$compromisso['idcompromisso']}&acao=editar' class='btn btn-sm btn-info'>Editar</a></td>
+            <td><a href='/deletar_compromisso?idcompromisso={$compromisso['idcompromisso']}' class='btn btn-sm btn-danger'>Deletar</a></td>
+          </tr>
+          ";
+        }
+      ?>
+    </tbody>
+  </table>
+</div>

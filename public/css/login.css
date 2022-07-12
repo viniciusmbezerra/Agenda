@@ -1,0 +1,185 @@
+html{
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    perspective: 100em;
+    perspective-origin: 50% 50%;
+    animation: 10s infinite linear ceu;
+}
+
+.sol {
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    background: yellow;
+    box-shadow: yellow 0px 0px 100px,
+                yellow 0px 0px 200px,
+                yellow 0px 0px 300px,
+                yellow 0px 0px 400px;
+    animation: 10s infinite linear sol,
+               10s infinite linear tempo;
+    transform: translateZ(-15em);
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 90%;
+    top: -20%;
+}
+
+@keyframes ceu {
+    from {
+        background: #00aaff;
+    }
+
+    50% {
+        background: rgb(35, 35, 35);
+    }
+
+    80% {
+        background: rgb(57, 57, 57);
+    }
+
+    to {
+        background: #00aaff;
+    }
+}
+
+@keyframes sol {
+    from {
+        background: yellow;
+        box-shadow: yellow 0px 0px 100px,
+                    yellow 0px 0px 200px,
+                    yellow 0px 0px 300px,
+                    yellow 0px 0px 400px;
+    }
+
+    50% {
+        background: rgb(109, 109, 109);
+        box-shadow: rgb(109, 109, 109) 0px 0px 100px,
+                    rgb(109, 109, 109) 0px 0px 200px,
+                    rgb(109, 109, 109) 0px 0px 300px,
+                    rgb(109, 109, 109) 0px 0px 400px;
+    }
+
+    80% {
+        background: rgb(136, 136, 136);
+        box-shadow: rgb(136, 136, 136) 0px 0px 100px,
+                    rgb(136, 136, 136) 0px 0px 200px,
+                    rgb(136, 136, 136) 0px 0px 300px,
+                    rgb(136, 136, 136) 0px 0px 400px;
+    }
+
+    to {
+        background: yellow;
+        box-shadow: yellow 0px 0px 100px,
+                    yellow 0px 0px 200px,
+                    yellow 0px 0px 300px,
+                    yellow 0px 0px 400px;
+    }
+}
+
+.cube {
+    width: 25em;
+    height: 25em;
+
+    animation: rotate 1s 1 linear;
+    transform-style: preserve-3d;
+}
+
+.face {
+    background: #3131319e;
+    box-shadow: inset black 0px 0px 10px;
+    color: #00aaff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25em;
+    height: 25em;
+    position: absolute;
+}
+
+.face--front {
+    transform: translateZ(12.5em);
+}
+.face--right {
+    transform: rotateY(90deg) translateZ(12.5em);
+}
+.face--back {
+    transform: rotateY(180deg) translateZ(12.5em);
+}
+.face--left {
+    transform: rotateY(-90deg) translateZ(12.5em);
+}
+.face--top {
+    transform: rotateX(90deg) translateZ(12.5em);
+}
+.face--bottom {
+    transform: rotateX(-90deg) translateZ(12.5em);
+}   
+
+@keyframes rotate {
+    from {
+        transform: rotateX(90deg) rotateY(180deg) scale3d(0,0,0);
+    }
+
+    to {
+        transform: rotateX(0deg) rotateY(0deg) scale3d(1,1,1);
+    }
+}
+
+@keyframes cadastro {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(90deg);}
+}
+@keyframes login {
+    from {transform: rotateY(90deg);}
+    to {transform: rotateY(0deg);}
+}
+
+.login {
+    color: rgb(255, 255, 255);
+    background: transparent;
+    padding: 1.25em;
+    text-align: center;
+    width: 100%;
+}
+.login > a {
+    text-decoration: none;
+    background: rgb(56, 56, 56);
+}
+.login > a:hover {
+    transition: .5s;
+    color: rgb(255, 255, 255);
+    background: rgb(44, 44, 44);
+}
+.login > #entrar {
+    text-decoration: none;
+    background: rgb(255, 255, 255);
+}
+.login > #entrar:hover {
+    transition: .5s;
+    color: rgb(255, 255, 255);
+    background: rgb(44, 44, 44);
+}
+
+.login > input {
+    margin: 10px auto;
+    outline: none;
+    overflow: none;
+    padding: 5px;
+}
+
+.login > .btn {
+    display: inline;
+    width: max-content;
+    margin: 10px auto;
+}
+
+hgroup {
+    margin-bottom: 1.875em;
+}
