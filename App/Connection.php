@@ -11,7 +11,7 @@ class Connection {
 		$port = '3306';
 		$name = 'agenda';
 		$user = 'root';
-		$pass = '81442420';
+		$pass = '';
 
 		try {
 			$conn = new \PDO("mysql:host={$host};port={$port};dbname={$name}","{$user}","{$pass}");
@@ -46,7 +46,7 @@ class Connection {
 		
 		if (empty(self::$conn)) {
 
-			self::$conn = mysqli_connect('127.0.0.1', 'root', '81442420', 'agenda');
+			self::$conn = mysqli_connect('127.0.0.1', 'root', '', 'agenda');
 
 		}
 
